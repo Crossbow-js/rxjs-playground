@@ -1,0 +1,42 @@
+{
+  "name": "rxjs-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "crossbow watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^3.3.5",
+    "crossbow-babel-browserify": "^1.0.3",
+    "crossbow-cli": "^1.1.8",
+    "jquery": "^2.1.4",
+    "rx": "^2.5.3"
+  },
+  "crossbow": {
+    "watch": {
+      "bs-config": {
+        "server": true,
+        "logFileChanges": false
+      },
+      "tasks": {
+        "js/*.js": [
+          "babel-browserify",
+          "bs:reload"
+        ],
+        "*.html": [
+          "bs:reload"
+        ]
+      }
+    },
+    "config": {
+      "babel-browserify": {
+        "input": "js/app.js",
+        "root": "js",
+        "output": "js/dist/app.js"
+      }
+    }
+  }
+}
